@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
 <body>
-    <label for="">UserName</label>
-    <input type="text" placeholder="nhap username" id="txtboxUserName" name="txtUserName" />
-    <label for="">Password</label>
-    <input type="text" placeholder="nhap password" id="txtboxpassword" name="txtpassword" />
-    <button>login</button>
-</body>
+    <label for="txtUserName">UserName</label>
+    <input type="text" placeholder="Nhập username" id="txtUserName" name="txtUserName" />
+    <br />
+    <label for="txtpassword">Password</label>
+    <input type="password" placeholder="Nhập password" id="txtpassword" name="txtpassword" />
+    <br />
+    <button onclick="login()">Login</button>
 
+    <script>
+        function login() {
+            // Lấy giá trị từ input
+            let username = document.getElementById("txtUserName").value;
+            let password = document.getElementById("txtpassword").value;
+
+            // Kiểm tra thông tin đăng nhập
+            if (username === "admin" && password === "admin") {
+                alert("Đăng nhập thành công!");
+                window.location.href = "success.html"; // Chuyển hướng đến trang đăng nhập thành công
+            } else {
+                alert("Sai tài khoản hoặc mật khẩu!");
+            }
+        }
+    </script>
+</body>
 </html>
